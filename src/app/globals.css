@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+/* =========================================
+   Innovation Project — Brand Design System
+   Source: docs/05_UI_UX_GUIDE.md
+   ========================================= */
+
+:root {
+  /* Brand colors */
+  --color-midnight-navy: #0B1020;
+  --color-deep-tech-blue: #0A3D77;
+  --color-electric-blue: #006EEC;
+  --color-innovation-yellow: #FAF855;
+  --color-soft-cloud-white: #FFFFFF;
+  --color-cool-slate: #9FB2CA;
+  --color-light-surface: #F6F8FB;
+  --color-dark-surface: #0A0A0A;
+
+  /* Semantic aliases */
+  --background: var(--color-soft-cloud-white);
+  --foreground: var(--color-midnight-navy);
+}
+
+@theme inline {
+  /* Extend Tailwind with brand colors */
+  --color-midnight-navy: #0B1020;
+  --color-deep-tech-blue: #0A3D77;
+  --color-electric-blue: #006EEC;
+  --color-innovation-yellow: #FAF855;
+  --color-cool-slate: #9FB2CA;
+  --color-light-surface: #F6F8FB;
+  --color-dark-surface: #0A0A0A;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* =========================================
+   Base Styles
+   ========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================
+   Reduced Motion
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
